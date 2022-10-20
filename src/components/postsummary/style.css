@@ -1,0 +1,37 @@
+.Container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.BoardTable table {
+  border-top: 2px solid #ef6c00;
+  border-bottom: 2px solid #ef6c00;
+}
+.BoardTable td,
+.BoardTable th {
+  padding: 18px 5px;
+  border-bottom: 1px solid #ff6d00;
+}
+.BoardTable th {
+  font-weight: 500;
+  background-color: #ffcc80;
+  color: #000;
+}
+.BoardTable td {
+  text-align: center;
+}
+.BoardTable tr:hover {
+  background-color: #ffcc80;
+  color: #fff;
+}
+.BoardDescTitle {
+  cursor: pointer;
+}
+.WriteBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}

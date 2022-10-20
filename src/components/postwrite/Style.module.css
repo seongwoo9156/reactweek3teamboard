@@ -1,0 +1,41 @@
+.postWriteSection{
+  width: 100%;
+  margin: 0px auto;
+}
+
+
+.postWriteSection div{
+    display: inline-block;
+    width: 80px;
+}
+.postWriteSection ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.postWriteSection ul input {
+  width: 95% ;
+} 
+
+.postWriteSection li{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.postWriteSection textarea{
+    width: 95%;
+    min-height: 400px;
+    margin: 5px 0px;
+    resize: none;
+}
+
+.postWriteSection .btnWrap{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}

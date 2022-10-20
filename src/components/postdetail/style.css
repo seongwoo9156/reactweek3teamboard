@@ -1,0 +1,239 @@
+/* 댓글리스트 */
+.CommentContainer {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-top: 2px solid #333;
+  position: relative;
+}
+
+.CmtLength {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+}
+
+.CmtBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+  align-items: center;
+  border-bottom: dotted 1px rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+}
+
+.CmtName,
+.CmtDesc {
+  font-size: 1rem;
+}
+.CmtBox p {
+  display: inline;
+}
+.CmtName {
+  margin: 0 20px 0 10px;
+  width: 100px;
+  text-align: center;
+}
+.CmtBtnWrap {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+/* 댓글작성폼 */
+.CmtForm {
+  margin-top: 50px;
+  border: 1px solid rgba(20, 20, 20, 0.4);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+.CmtWriteBox {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 70px;
+}
+.CmtUser {
+  width: 20%;
+}
+.CmtId,
+.CmtPw {
+  width: 100%;
+  height: 40%;
+  padding-left: 5px;
+}
+.CmtId {
+  margin-bottom: 0.6rem;
+}
+.CmtWrite {
+  width: 80%;
+}
+.CmtDesc,
+.CmtDescinput {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+.CmtAddBtn {
+  margin-top: 20px;
+  text-align: center;
+}
+/* 게시글  */
+.Container2 {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.BoardInner {
+  padding: 20px;
+}
+
+.BoardTitle {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cdcdcd;
+  border-top: 3px solid #333;
+  padding-top: 15px;
+}
+.BoardTitle h5 {
+  font-size: 13px;
+  font-weight: normal;
+}
+.BoardTitle h2 {
+  margin: 20px 0 15px 0;
+  font-size: 28px;
+}
+.BoardTitle h4 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.BoardDesc {
+  margin: 40px 0 50px 0;
+  min-height: 230px;
+  border-bottom: 1px solid #cdcdcd;
+  white-space: pre-line;
+}
+.PostDetailBtnWrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+/* 댓글예외처리 로딩스피너 + 경고문 */
+@keyframes CommentLoading {
+  0% {
+    opacity: 1;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.23, 1.23);
+  }
+  100% {
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1);
+  }
+}
+.CommentLoading div > div {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff727d;
+  animation: CommentLoading 1s linear infinite;
+}
+.CommentLoading div:nth-child(1) > div {
+  left: 126px;
+  top: 94px;
+  animation-delay: -0.875s;
+}
+.CommentLoading > div:nth-child(1) {
+  transform: rotate(0deg);
+  transform-origin: 132px 100px;
+}
+.CommentLoading div:nth-child(2) > div {
+  left: 117px;
+  top: 117px;
+  animation-delay: -0.75s;
+}
+.CommentLoading > div:nth-child(2) {
+  transform: rotate(45deg);
+  transform-origin: 123px 123px;
+}
+.CommentLoading div:nth-child(3) > div {
+  left: 94px;
+  top: 126px;
+  animation-delay: -0.625s;
+}
+.CommentLoading > div:nth-child(3) {
+  transform: rotate(90deg);
+  transform-origin: 100px 132px;
+}
+.CommentLoading div:nth-child(4) > div {
+  left: 71px;
+  top: 117px;
+  animation-delay: -0.5s;
+}
+.CommentLoading > div:nth-child(4) {
+  transform: rotate(135deg);
+  transform-origin: 77px 123px;
+}
+.CommentLoading div:nth-child(5) > div {
+  left: 62px;
+  top: 94px;
+  animation-delay: -0.375s;
+}
+.CommentLoading > div:nth-child(5) {
+  transform: rotate(180deg);
+  transform-origin: 68px 100px;
+}
+.CommentLoading div:nth-child(6) > div {
+  left: 71px;
+  top: 71px;
+  animation-delay: -0.25s;
+}
+.CommentLoading > div:nth-child(6) {
+  transform: rotate(225deg);
+  transform-origin: 77px 77px;
+}
+.CommentLoading div:nth-child(7) > div {
+  left: 94px;
+  top: 62px;
+  animation-delay: -0.125s;
+}
+.CommentLoading > div:nth-child(7) {
+  transform: rotate(270deg);
+  transform-origin: 100px 68px;
+}
+.CommentLoading div:nth-child(8) > div {
+  left: 117px;
+  top: 71px;
+  animation-delay: 0s;
+}
+.CommentLoading > div:nth-child(8) {
+  transform: rotate(315deg);
+  transform-origin: 123px 77px;
+}
+.LoadingSpinnerWrap {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+.CommentLoading {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+.CommentLoading div {
+  box-sizing: content-box;
+}
+.CmtError {
+  text-align: center;
+  padding: 30px;
+  color: rgb(223, 45, 45);
+  font-size: 25px;
+}
