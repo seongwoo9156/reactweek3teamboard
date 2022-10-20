@@ -8,7 +8,6 @@ import NewButton from "../newbutton/NewButton";
 import { Box, Modal } from "@material-ui/core";
 import { API_URL } from "../../shared/Request";
 
-
 const Comment = ({ id }) => {
   const dispatch = useDispatch();
 
@@ -54,7 +53,7 @@ const Comment = ({ id }) => {
 
   if (!loadingtest && cmt == undefined) {
     return (
-      <div className="CmtError">통신 오류로 데이터를 불러오지 못했습니다.</div>
+      <div className="CmtError">통신 오류로 데이터를 불러오지 못했습니다</div>
     );
   }
 
@@ -95,16 +94,13 @@ const CommentItem = ({ element, id }) => {
           dispatch(__getComments(id));
         })
         .chath((err) => {});
-
     } else {
       alert("비밀번호가 일치하지 않습니다.");
     }
   };
   //댓글 수정하기 버튼
   const onClickModify = () => {
-
     if (element.password == modifyPwRef.current.value) {
-
       return setView(false), setOpenModifyModal(false);
     } else {
       alert("비밀번호가 달라요.");
@@ -119,7 +115,6 @@ const CommentItem = ({ element, id }) => {
       axios
 
         .patch(`${API_URL}/comments/${element.id}`, {
-
           content: commentdesc,
         })
         .then((response) => {
@@ -128,7 +123,6 @@ const CommentItem = ({ element, id }) => {
         })
 
         .catch((err) => {});
-
     }
   };
 
@@ -228,9 +222,7 @@ const CommentItem = ({ element, id }) => {
         >
           <Box sx={style}>
             비밀번호 : <input type="password" ref={deletePwRef} />{" "}
-
             <NewButton type="button" value="확인" onClick={DelComment} />
-
           </Box>
         </Modal>
       </div>
@@ -263,7 +255,6 @@ const CommentForm = ({ id }) => {
       axios
 
         .post(`${API_URL}/comments/`, {
-
           post: id,
           id: Date.now() + "",
           author: comment.userid,
